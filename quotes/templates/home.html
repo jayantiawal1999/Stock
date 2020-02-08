@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+{% if ticker %}
+    {{ ticker }}
+{% endif %}
+    {% if api %}
+             <h1>{{ api.companyName }}</h1><br>
+                Latest Price:$ {{ api.latestPrice }}<br>
+                Previous Close: {{ api.previousClose }}<br>
+                Market Cap: {{ api.marketCap }}<br>
+                52Wk High: {{ api.week52High }}<br>
+                52Wk Low: {{ api.week52Low }}<br>
+                YTD Change: {{ api.ytdChange }}<br>
+    {% endif %}
+ </div>
+{% endblock %}
+
+</body>
+</html>
